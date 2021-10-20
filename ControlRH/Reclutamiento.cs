@@ -22,7 +22,7 @@ namespace ControlRH
         public Reclutamiento()
         {
             InitializeComponent();
-            actualizarTabla();
+            actualizarTabla(ReclutamientoDGV);
         }
 
 
@@ -46,7 +46,7 @@ namespace ControlRH
 
         private void Reclutamiento_Load(object sender, EventArgs e)
         {
-            actualizarTabla();
+            actualizarTabla(ReclutamientoDGV);
         }
 
         private void Agregar_Click(object sender, EventArgs e)
@@ -56,36 +56,36 @@ namespace ControlRH
             if (reader != null)
             {
                 MessageBox.Show("Se ha agregado el registro con exito.", "Registro exitoso");
-                actualizarTabla();
+                actualizarTabla(ReclutamientoDGV);
             }
             
         }
 
 
-        private void actualizarTabla()
+        private void actualizarTabla(DataGridView data)
         {
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select * from reclutamiento",conexion.GetConnection());
-            DataSet dataSet = new DataSet();
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataSet);
-            dataTable = dataSet.Tables[0];
-            this.listView1.Items.Clear();
-            for(int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                DataRow filas = dataTable.Rows[i];
-                ListViewItem item = new ListViewItem(filas["Nombre"].ToString());
-                for (int j = 0; j < dataTable.Columns.Count; j++) {
-
-                    DataColumn columnas = dataTable.Columns[j];
-                    item.SubItems.Add(columnas.ToString());
-                    
-                }
+            sqlStatement = "select * from reclutamiento";
             
-                
-               
-                listView1.Items.Add(item);
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sqlStatement,conexion.GetConnection());
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                BindingSource form = new BindingSource();
+                form.DataSource = table;
+                data.DataSource = form;
             }
+            catch(Exception e)
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado", "Error");
+            }
+        }
+
+        private void ReclutamientoDGV_Load(object sender, DataGridViewCellEventArgs e)
+        {
+            actualizarTabla(ReclutamientoDGV);
         }
     }
-}
+
+   
+    }
