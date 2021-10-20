@@ -47,6 +47,8 @@ namespace ControlRH
             this.ReclutamientoDGV = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelNomP = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReclutamientoDGV)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace ControlRH
             // 
             // botonRechazar
             // 
-            this.botonRechazar.Location = new System.Drawing.Point(549, 415);
+            this.botonRechazar.Location = new System.Drawing.Point(649, 388);
             this.botonRechazar.Name = "botonRechazar";
             this.botonRechazar.Size = new System.Drawing.Size(75, 23);
             this.botonRechazar.TabIndex = 1;
@@ -201,7 +203,6 @@ namespace ControlRH
             this.ReclutamientoDGV.Name = "ReclutamientoDGV";
             this.ReclutamientoDGV.Size = new System.Drawing.Size(409, 221);
             this.ReclutamientoDGV.TabIndex = 11;
-            
             // 
             // label7
             // 
@@ -220,11 +221,31 @@ namespace ControlRH
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 13;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(481, 257);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Prospecto:";
+            // 
+            // labelNomP
+            // 
+            this.labelNomP.AutoSize = true;
+            this.labelNomP.Location = new System.Drawing.Point(545, 257);
+            this.labelNomP.Name = "labelNomP";
+            this.labelNomP.Size = new System.Drawing.Size(35, 13);
+            this.labelNomP.TabIndex = 15;
+            this.labelNomP.Text = "label9";
+            // 
             // Reclutamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelNomP);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ReclutamientoDGV);
@@ -267,6 +288,8 @@ namespace ControlRH
         private System.Windows.Forms.DataGridView ReclutamientoDGV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelNomP;
     }
 }
 

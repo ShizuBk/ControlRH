@@ -28,7 +28,16 @@ namespace ControlRH
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
+            string nombre, puesto, identificador;
 
+            if (rbEmp.Checked)
+            {
+                sqlStatement = "call aceptarV("+"Empleado"+")";
+            }
+            else if(rbPrac.Checked)
+            {
+
+            }
 
             
 
@@ -79,6 +88,12 @@ namespace ControlRH
             {
                 MessageBox.Show("Ha ocurrido un error inesperado", "Error");
             }
+        }
+
+        public void accionesTabla()
+        {
+            ReclutamientoDGV.Columns[0].Visible = false;
+            ReclutamientoDGV.Columns[1].Width = 120;
         }
 
         private void ReclutamientoDGV_Load(object sender, DataGridViewCellEventArgs e)
