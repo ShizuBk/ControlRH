@@ -16,7 +16,7 @@ namespace ControlRH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reclutamiento());
+            Application.Run(new Home());
         }
     }
 }

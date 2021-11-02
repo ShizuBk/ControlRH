@@ -36,16 +36,17 @@ namespace ControlRH
             command.CommandText = sqlStatement;
             try
             {
+                command.Connection = connection;
                 connection.Open();
                 reader = command.ExecuteReader();
                 connection.Close();
+                return reader;
             }
             catch
             {
-                MessageBox.Show("No se ha podido realizar la operación., Error");
+                MessageBox.Show("No se ha podido realizar la operación.", "Error");
                 return null;
             }
-            return reader;
         }
     }
 }

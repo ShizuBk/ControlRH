@@ -67,11 +67,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Prospectos.cs">
+    <Compile Include="Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prospectos.Designer.cs">
-      <DependentUpon>Prospectos.cs</DependentUpon>
+    <Compile Include="Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bajas.Designer.cs">
+      <DependentUpon>Bajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fecha.Designer.cs">
+      <DependentUpon>Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practicantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Practicantes.Designer.cs">
+      <DependentUpon>Practicantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OIdentificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OIdentificador.Designer.cs">
+      <DependentUpon>OIdentificador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="secPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="secPin.Designer.cs">
+      <DependentUpon>secPin.cs</DependentUpon>
     </Compile>
     <Compile Include="Reclutamiento.cs">
       <SubType>Form</SubType>
@@ -81,6 +117,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bajas.resx">
+      <DependentUpon>Bajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fecha.resx">
+      <DependentUpon>Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OIdentificador.resx">
+      <DependentUpon>OIdentificador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Practicantes.resx">
+      <DependentUpon>Practicantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="secPin.resx">
+      <DependentUpon>secPin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,9 +147,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Prospectos.resx">
-      <DependentUpon>Prospectos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reclutamiento.resx">
       <DependentUpon>Reclutamiento.cs</DependentUpon>
     </EmbeddedResource>

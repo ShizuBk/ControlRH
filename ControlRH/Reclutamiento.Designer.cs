@@ -36,7 +36,7 @@ namespace ControlRH
             this.rbEmp = new System.Windows.Forms.RadioButton();
             this.rbPrac = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Puesto = new System.Windows.Forms.TextBox();
+            this.cmbPuestos = new System.Windows.Forms.ComboBox();
             this.Telefono = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,16 +46,19 @@ namespace ControlRH
             this.label6 = new System.Windows.Forms.Label();
             this.ReclutamientoDGV = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.labelNomP = new System.Windows.Forms.Label();
+            this.Filtrar = new System.Windows.Forms.Button();
+            this.noFilter = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReclutamientoDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(649, 303);
+            this.botonAceptar.Location = new System.Drawing.Point(648, 332);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(75, 23);
             this.botonAceptar.TabIndex = 0;
@@ -65,7 +68,7 @@ namespace ControlRH
             // 
             // botonRechazar
             // 
-            this.botonRechazar.Location = new System.Drawing.Point(649, 388);
+            this.botonRechazar.Location = new System.Drawing.Point(649, 361);
             this.botonRechazar.Name = "botonRechazar";
             this.botonRechazar.Size = new System.Drawing.Size(75, 23);
             this.botonRechazar.TabIndex = 1;
@@ -76,7 +79,7 @@ namespace ControlRH
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 172);
+            this.label1.Location = new System.Drawing.Point(90, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 3;
@@ -85,7 +88,7 @@ namespace ControlRH
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(178, 172);
+            this.label2.Location = new System.Drawing.Point(224, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 4;
@@ -94,7 +97,7 @@ namespace ControlRH
             // rbEmp
             // 
             this.rbEmp.AutoSize = true;
-            this.rbEmp.Location = new System.Drawing.Point(549, 294);
+            this.rbEmp.Location = new System.Drawing.Point(548, 323);
             this.rbEmp.Name = "rbEmp";
             this.rbEmp.Size = new System.Drawing.Size(72, 17);
             this.rbEmp.TabIndex = 7;
@@ -105,7 +108,7 @@ namespace ControlRH
             // rbPrac
             // 
             this.rbPrac.AutoSize = true;
-            this.rbPrac.Location = new System.Drawing.Point(549, 317);
+            this.rbPrac.Location = new System.Drawing.Point(548, 346);
             this.rbPrac.Name = "rbPrac";
             this.rbPrac.Size = new System.Drawing.Size(79, 17);
             this.rbPrac.TabIndex = 8;
@@ -115,7 +118,7 @@ namespace ControlRH
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Puesto);
+            this.groupBox1.Controls.Add(this.cmbPuestos);
             this.groupBox1.Controls.Add(this.Telefono);
             this.groupBox1.Controls.Add(this.Nombre);
             this.groupBox1.Controls.Add(this.label3);
@@ -129,23 +132,26 @@ namespace ControlRH
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de prospectos";
             // 
-            // Puesto
+            // cmbPuestos
             // 
-            this.Puesto.Location = new System.Drawing.Point(201, 100);
-            this.Puesto.Name = "Puesto";
-            this.Puesto.Size = new System.Drawing.Size(284, 20);
-            this.Puesto.TabIndex = 13;
+            this.cmbPuestos.FormattingEnabled = true;
+            this.cmbPuestos.Location = new System.Drawing.Point(421, 77);
+            this.cmbPuestos.Name = "cmbPuestos";
+            this.cmbPuestos.Size = new System.Drawing.Size(180, 21);
+            this.cmbPuestos.TabIndex = 14;
+            this.cmbPuestos.Tag = "";
+            this.cmbPuestos.Text = "Seleccione";
             // 
             // Telefono
             // 
-            this.Telefono.Location = new System.Drawing.Point(169, 64);
+            this.Telefono.Location = new System.Drawing.Point(97, 77);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(215, 20);
             this.Telefono.TabIndex = 12;
             // 
             // Nombre
             // 
-            this.Nombre.Location = new System.Drawing.Point(164, 27);
+            this.Nombre.Location = new System.Drawing.Point(164, 38);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(411, 20);
             this.Nombre.TabIndex = 11;
@@ -153,7 +159,7 @@ namespace ControlRH
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 103);
+            this.label3.Location = new System.Drawing.Point(328, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 10;
@@ -162,7 +168,7 @@ namespace ControlRH
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 67);
+            this.label4.Location = new System.Drawing.Point(44, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 9;
@@ -171,7 +177,7 @@ namespace ControlRH
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(111, 27);
+            this.label5.Location = new System.Drawing.Point(111, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 8;
@@ -179,7 +185,7 @@ namespace ControlRH
             // 
             // Agregar
             // 
-            this.Agregar.Location = new System.Drawing.Point(601, 64);
+            this.Agregar.Location = new System.Drawing.Point(637, 75);
             this.Agregar.Name = "Agregar";
             this.Agregar.Size = new System.Drawing.Size(75, 23);
             this.Agregar.TabIndex = 7;
@@ -190,7 +196,7 @@ namespace ControlRH
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(324, 172);
+            this.label6.Location = new System.Drawing.Point(362, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 10;
@@ -201,30 +207,32 @@ namespace ControlRH
             this.ReclutamientoDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ReclutamientoDGV.Location = new System.Drawing.Point(46, 190);
             this.ReclutamientoDGV.Name = "ReclutamientoDGV";
+            this.ReclutamientoDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ReclutamientoDGV.Size = new System.Drawing.Size(409, 221);
             this.ReclutamientoDGV.TabIndex = 11;
+            this.ReclutamientoDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReclutamientoDGV_CellClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(562, 205);
+            this.label7.Location = new System.Drawing.Point(482, 205);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Filtrar:";
+            this.label7.Text = "Mostrar por:";
             // 
-            // comboBox1
+            // cmbFiltro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(603, 202);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Location = new System.Drawing.Point(551, 202);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(153, 21);
+            this.cmbFiltro.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(481, 257);
+            this.label8.Location = new System.Drawing.Point(482, 286);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 14;
@@ -233,20 +241,51 @@ namespace ControlRH
             // labelNomP
             // 
             this.labelNomP.AutoSize = true;
-            this.labelNomP.Location = new System.Drawing.Point(545, 257);
+            this.labelNomP.Location = new System.Drawing.Point(546, 286);
             this.labelNomP.Name = "labelNomP";
             this.labelNomP.Size = new System.Drawing.Size(35, 13);
             this.labelNomP.TabIndex = 15;
             this.labelNomP.Text = "label9";
             // 
+            // Filtrar
+            // 
+            this.Filtrar.Location = new System.Drawing.Point(707, 200);
+            this.Filtrar.Name = "Filtrar";
+            this.Filtrar.Size = new System.Drawing.Size(75, 23);
+            this.Filtrar.TabIndex = 16;
+            this.Filtrar.Text = "Filtrar";
+            this.Filtrar.UseVisualStyleBackColor = true;
+            this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
+            // 
+            // noFilter
+            // 
+            this.noFilter.Location = new System.Drawing.Point(707, 229);
+            this.noFilter.Name = "noFilter";
+            this.noFilter.Size = new System.Drawing.Size(75, 23);
+            this.noFilter.TabIndex = 17;
+            this.noFilter.Text = "Quitar filtro";
+            this.noFilter.UseVisualStyleBackColor = true;
+            this.noFilter.Click += new System.EventHandler(this.noFilter_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(18, 152);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(770, 266);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Control de prospectos";
+            // 
             // Reclutamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 430);
+            this.Controls.Add(this.noFilter);
+            this.Controls.Add(this.Filtrar);
             this.Controls.Add(this.labelNomP);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ReclutamientoDGV);
             this.Controls.Add(this.label6);
@@ -257,7 +296,9 @@ namespace ControlRH
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonRechazar);
             this.Controls.Add(this.botonAceptar);
+            this.Controls.Add(this.groupBox2);
             this.Name = "Reclutamiento";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Reclutamiento";
             this.Load += new System.EventHandler(this.Reclutamiento_Load);
             this.groupBox1.ResumeLayout(false);
@@ -277,7 +318,6 @@ namespace ControlRH
         private System.Windows.Forms.RadioButton rbEmp;
         private System.Windows.Forms.RadioButton rbPrac;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Puesto;
         private System.Windows.Forms.TextBox Telefono;
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.Label label3;
@@ -287,9 +327,13 @@ namespace ControlRH
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView ReclutamientoDGV;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelNomP;
+        private System.Windows.Forms.ComboBox cmbPuestos;
+        private System.Windows.Forms.Button Filtrar;
+        private System.Windows.Forms.Button noFilter;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
