@@ -71,7 +71,9 @@ namespace ControlRH
                         try
                         {                         
                             identificador = nid.getID();
-                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador +","+tel+ "')";
+                            Console.WriteLine(identificador);
+                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador +"','"+tel+ "')";
+                            Console.WriteLine(sqlStatement);
                             conexion.executeQuery(sqlStatement);
                             MessageBox.Show("Se ha completado la operación.", "Operación exitosa");
                         }

@@ -19,17 +19,54 @@ namespace ControlRH
         public Bajas()
         {
             InitializeComponent();
-            actualizarTabla(BajasDGV);
+            Descripcion.Text = "";
         }
 
         private void btnReingresar_Click(object sender, EventArgs e)
         {
+            conexion = new Conexion();
+            if (solicitarPin())
+            {
+                string selected = BajasDGV.CurrentRow.Cells[0].Value.ToString();
+                if (rbEmp.Checked == true)
+                {
+                    sqlStatement = "call ReingresarEmp('" + selected + "')";
+                }
+                else
+                {
+                    sqlStatement="call EmplearPrac('"+selected + "')";
+                }
 
+                Console.WriteLine(sqlStatement);
+
+                try
+                {
+                    conexion.executeQuery(sqlStatement);
+                    MessageBox.Show("Se ha reingresado con exito", "Aviso");
+                    actualizarTabla(BajasDGV);
+                    txtDes.Text = "";
+                }
+                catch
+                {
+                    MessageBox.Show("Ha ocurrido un error", "Error");
+                }
+
+            }
         }
+
+
         private void actualizarTabla(DataGridView data)
         {
             conexion = new Conexion();
-            sqlStatement = "select * from bajas";
+
+            if (rbEmp.Checked == true)
+            {
+                sqlStatement = "select nombre,puesto,telefono from bajasemp";
+            }
+            else
+            {
+                sqlStatement = "select nombre,puesto, telefono from bajasprac";
+            }
 
             try
             {
@@ -49,7 +86,7 @@ namespace ControlRH
             accionesTabla();
         }
 
-        private void actualizarTabla(DataGridView data, string filter)
+        private void actualizarTabla(DataGridView data,string filter)
         {
             sqlStatement = "select * from reclutamiento where puesto='" + filter + "'";
 
@@ -72,6 +109,93 @@ namespace ControlRH
         }
         private void accionesTabla()
         {
+        }
+
+        private void rbEmp_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarTabla(BajasDGV);
+            Descripcion.Text = "Motivo de baja:";
+        }
+
+        private void rbPrac_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarTabla(BajasDGV);
+            Descripcion.Text = "Evaluación:";
+        }
+
+        private void BajasDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            conexion = new Conexion();
+            try
+            {
+                if (rbEmp.Checked == true)
+                {
+                    string selected = BajasDGV.CurrentRow.Cells[0].Value.ToString();
+                    sqlStatement = "select motivo from bajasemp where nombre='" + selected + "'";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(sqlStatement, conexion.GetConnection());
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    txtDes.Text = table.Rows[0]["motivo"].ToString();
+                }
+                else
+                {
+                    string selected = BajasDGV.CurrentRow.Cells[0].Value.ToString();
+                    sqlStatement = "select evaluacion from bajasprac where nombre='" + selected + "'";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(sqlStatement, conexion.GetConnection());
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    txtDes.Text = table.Rows[0]["evaluacion"].ToString();
+                }
+            }
+            catch { }
+        }
+
+        private bool solicitarPin() //Llamada a ventana de pin
+        {
+            String pinSeg;
+            secPin pin = new secPin();
+            if (pin.ShowDialog() == DialogResult.OK)
+            {
+                pinSeg = pin.getPin();
+                pin.Dispose();
+                if (pinSeg != "1234")
+                {
+                    MessageBox.Show("Pin incorrecto.", "Error");
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            conexion = new Conexion();
+            if (solicitarPin())
+            {
+                if (rbEmp.Checked == true)
+                {
+                    sqlStatement = "delete from bajasemp where nombre='" + BajasDGV.CurrentRow.Cells[0].Value.ToString() + "'";
+                }
+                else
+                {
+                    sqlStatement = "delete from bajasprac wherenombre = '" + BajasDGV.CurrentRow.Cells[0].Value.ToString() + "'";
+                }
+
+                try
+                {
+                    conexion.executeQuery(sqlStatement);
+                    MessageBox.Show("Se ha descartado el registro", "Aviso");
+                    actualizarTabla(BajasDGV);
+                    txtDes.Text = "";
+                }
+                catch { MessageBox.Show("Ha ocurrido un error", "Error"); }
+            }
         }
     }
 }

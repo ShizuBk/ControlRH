@@ -58,7 +58,7 @@ namespace ControlRH
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(648, 332);
+            this.botonAceptar.Location = new System.Drawing.Point(742, 402);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(75, 23);
             this.botonAceptar.TabIndex = 0;
@@ -68,7 +68,7 @@ namespace ControlRH
             // 
             // botonRechazar
             // 
-            this.botonRechazar.Location = new System.Drawing.Point(649, 361);
+            this.botonRechazar.Location = new System.Drawing.Point(743, 431);
             this.botonRechazar.Name = "botonRechazar";
             this.botonRechazar.Size = new System.Drawing.Size(75, 23);
             this.botonRechazar.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace ControlRH
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 172);
+            this.label1.Location = new System.Drawing.Point(184, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace ControlRH
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 172);
+            this.label2.Location = new System.Drawing.Point(318, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace ControlRH
             // rbEmp
             // 
             this.rbEmp.AutoSize = true;
-            this.rbEmp.Location = new System.Drawing.Point(548, 323);
+            this.rbEmp.Location = new System.Drawing.Point(642, 393);
             this.rbEmp.Name = "rbEmp";
             this.rbEmp.Size = new System.Drawing.Size(72, 17);
             this.rbEmp.TabIndex = 7;
@@ -108,7 +108,7 @@ namespace ControlRH
             // rbPrac
             // 
             this.rbPrac.AutoSize = true;
-            this.rbPrac.Location = new System.Drawing.Point(548, 346);
+            this.rbPrac.Location = new System.Drawing.Point(642, 416);
             this.rbPrac.Name = "rbPrac";
             this.rbPrac.Size = new System.Drawing.Size(79, 17);
             this.rbPrac.TabIndex = 8;
@@ -125,7 +125,7 @@ namespace ControlRH
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.Agregar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(106, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 128);
             this.groupBox1.TabIndex = 9;
@@ -196,7 +196,7 @@ namespace ControlRH
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(362, 172);
+            this.label6.Location = new System.Drawing.Point(456, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 10;
@@ -205,7 +205,7 @@ namespace ControlRH
             // ReclutamientoDGV
             // 
             this.ReclutamientoDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReclutamientoDGV.Location = new System.Drawing.Point(46, 190);
+            this.ReclutamientoDGV.Location = new System.Drawing.Point(140, 260);
             this.ReclutamientoDGV.Name = "ReclutamientoDGV";
             this.ReclutamientoDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ReclutamientoDGV.Size = new System.Drawing.Size(409, 221);
@@ -215,7 +215,7 @@ namespace ControlRH
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(482, 205);
+            this.label7.Location = new System.Drawing.Point(576, 275);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 12;
@@ -224,7 +224,7 @@ namespace ControlRH
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(551, 202);
+            this.cmbFiltro.Location = new System.Drawing.Point(645, 272);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(153, 21);
             this.cmbFiltro.TabIndex = 13;
@@ -232,7 +232,7 @@ namespace ControlRH
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(482, 286);
+            this.label8.Location = new System.Drawing.Point(576, 356);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 14;
@@ -241,7 +241,7 @@ namespace ControlRH
             // labelNomP
             // 
             this.labelNomP.AutoSize = true;
-            this.labelNomP.Location = new System.Drawing.Point(546, 286);
+            this.labelNomP.Location = new System.Drawing.Point(640, 356);
             this.labelNomP.Name = "labelNomP";
             this.labelNomP.Size = new System.Drawing.Size(35, 13);
             this.labelNomP.TabIndex = 15;
@@ -249,7 +249,7 @@ namespace ControlRH
             // 
             // Filtrar
             // 
-            this.Filtrar.Location = new System.Drawing.Point(707, 200);
+            this.Filtrar.Location = new System.Drawing.Point(801, 270);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(75, 23);
             this.Filtrar.TabIndex = 16;
@@ -259,7 +259,7 @@ namespace ControlRH
             // 
             // noFilter
             // 
-            this.noFilter.Location = new System.Drawing.Point(707, 229);
+            this.noFilter.Location = new System.Drawing.Point(801, 299);
             this.noFilter.Name = "noFilter";
             this.noFilter.Size = new System.Drawing.Size(75, 23);
             this.noFilter.TabIndex = 17;
@@ -269,7 +269,7 @@ namespace ControlRH
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(18, 152);
+            this.groupBox2.Location = new System.Drawing.Point(112, 222);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(770, 266);
             this.groupBox2.TabIndex = 18;
@@ -280,7 +280,7 @@ namespace ControlRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 430);
+            this.ClientSize = new System.Drawing.Size(967, 556);
             this.Controls.Add(this.noFilter);
             this.Controls.Add(this.Filtrar);
             this.Controls.Add(this.labelNomP);

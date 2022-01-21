@@ -40,7 +40,7 @@ namespace ControlRH
             // 
             this.panelCont.Location = new System.Drawing.Point(172, 12);
             this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(817, 497);
+            this.panelCont.Size = new System.Drawing.Size(984, 603);
             this.panelCont.TabIndex = 0;
             // 
             // btnReclutamiento
@@ -87,7 +87,7 @@ namespace ControlRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 521);
+            this.ClientSize = new System.Drawing.Size(1172, 627);
             this.Controls.Add(this.btnPracticantes);
             this.Controls.Add(this.btnBajas);
             this.Controls.Add(this.btnEmpleados);
@@ -95,7 +95,6 @@ namespace ControlRH
             this.Controls.Add(this.panelCont);
             this.Name = "Home";
             this.Text = "ControlRH";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

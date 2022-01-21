@@ -49,15 +49,25 @@ namespace ControlRH
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnTContrato = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Telefono = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.NIMMS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Antiguedad = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.FechaTermino = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.Motivo = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbTermino = new System.Windows.Forms.RadioButton();
+            this.rbOtro = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadosDGV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmpleadosDGV
@@ -65,11 +75,11 @@ namespace ControlRH
             this.EmpleadosDGV.AllowUserToAddRows = false;
             this.EmpleadosDGV.AllowUserToDeleteRows = false;
             this.EmpleadosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmpleadosDGV.Location = new System.Drawing.Point(26, 28);
+            this.EmpleadosDGV.Location = new System.Drawing.Point(95, 74);
             this.EmpleadosDGV.Name = "EmpleadosDGV";
             this.EmpleadosDGV.ReadOnly = true;
             this.EmpleadosDGV.RowHeadersWidth = 62;
-            this.EmpleadosDGV.Size = new System.Drawing.Size(297, 200);
+            this.EmpleadosDGV.Size = new System.Drawing.Size(297, 236);
             this.EmpleadosDGV.TabIndex = 0;
             this.EmpleadosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpleadosDGV_CellClick);
             // 
@@ -140,7 +150,7 @@ namespace ControlRH
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 86);
+            this.label7.Location = new System.Drawing.Point(24, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 8;
@@ -219,16 +229,18 @@ namespace ControlRH
             // 
             // btnTContrato
             // 
-            this.btnTContrato.Location = new System.Drawing.Point(268, 20);
+            this.btnTContrato.Location = new System.Drawing.Point(190, 56);
             this.btnTContrato.Name = "btnTContrato";
-            this.btnTContrato.Size = new System.Drawing.Size(102, 41);
+            this.btnTContrato.Size = new System.Drawing.Size(122, 43);
             this.btnTContrato.TabIndex = 18;
-            this.btnTContrato.Text = "Fijar término de contrato";
+            this.btnTContrato.Text = "Fijar fecha de término de contrato";
             this.btnTContrato.UseVisualStyleBackColor = true;
             this.btnTContrato.Click += new System.EventHandler(this.btnTContrato_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Telefono);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.NIMMS);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.TimePicker);
@@ -244,19 +256,35 @@ namespace ControlRH
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Actualizar);
-            this.groupBox1.Location = new System.Drawing.Point(373, 28);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(442, 74);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(447, 201);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(447, 236);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del empleado";
             // 
+            // Telefono
+            // 
+            this.Telefono.Location = new System.Drawing.Point(59, 171);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(125, 20);
+            this.Telefono.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(5, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Telefono:";
+            // 
             // NIMMS
             // 
             this.NIMMS.Location = new System.Drawing.Point(59, 135);
-            this.NIMMS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NIMMS.Margin = new System.Windows.Forms.Padding(2);
             this.NIMMS.Name = "NIMMS";
             this.NIMMS.Size = new System.Drawing.Size(125, 20);
             this.NIMMS.TabIndex = 19;
@@ -273,7 +301,8 @@ namespace ControlRH
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.Antiguedad);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.FechaTermino);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.btnTContrato);
@@ -281,24 +310,32 @@ namespace ControlRH
             this.groupBox2.Controls.Add(this.DiasContrato);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(373, 233);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(80, 323);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(447, 120);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(335, 145);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del contrato";
             // 
-            // button1
+            // Antiguedad
             // 
-            this.button1.Location = new System.Drawing.Point(268, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 29);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Dar de baja";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Antiguedad.AutoSize = true;
+            this.Antiguedad.Location = new System.Drawing.Point(121, 110);
+            this.Antiguedad.Name = "Antiguedad";
+            this.Antiguedad.Size = new System.Drawing.Size(41, 13);
+            this.Antiguedad.TabIndex = 22;
+            this.Antiguedad.Text = "label13";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(48, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Antigüedad:";
             // 
             // FechaTermino
             // 
@@ -320,11 +357,78 @@ namespace ControlRH
             this.label9.TabIndex = 19;
             this.label9.Text = "Fecha de término:";
             // 
+            // btnBaja
+            // 
+            this.btnBaja.Location = new System.Drawing.Point(18, 96);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(81, 28);
+            this.btnBaja.TabIndex = 21;
+            this.btnBaja.Text = "Dar de baja";
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            // 
+            // Motivo
+            // 
+            this.Motivo.Location = new System.Drawing.Point(144, 28);
+            this.Motivo.Name = "Motivo";
+            this.Motivo.Size = new System.Drawing.Size(283, 89);
+            this.Motivo.TabIndex = 22;
+            this.Motivo.Text = "";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 28);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Motivo de baja:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbOtro);
+            this.groupBox3.Controls.Add(this.rbTermino);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.Motivo);
+            this.groupBox3.Controls.Add(this.btnBaja);
+            this.groupBox3.Location = new System.Drawing.Point(445, 329);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(443, 138);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Despido";
+            // 
+            // rbTermino
+            // 
+            this.rbTermino.AutoSize = true;
+            this.rbTermino.Location = new System.Drawing.Point(18, 50);
+            this.rbTermino.Name = "rbTermino";
+            this.rbTermino.Size = new System.Drawing.Size(120, 17);
+            this.rbTermino.TabIndex = 24;
+            this.rbTermino.TabStop = true;
+            this.rbTermino.Text = "Término de contrato";
+            this.rbTermino.UseVisualStyleBackColor = true;
+            this.rbTermino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // rbOtro
+            // 
+            this.rbOtro.AutoSize = true;
+            this.rbOtro.Location = new System.Drawing.Point(18, 73);
+            this.rbOtro.Name = "rbOtro";
+            this.rbOtro.Size = new System.Drawing.Size(109, 17);
+            this.rbOtro.TabIndex = 25;
+            this.rbOtro.TabStop = true;
+            this.rbOtro.Text = "Otro (Especifique)";
+            this.rbOtro.UseVisualStyleBackColor = true;
+            this.rbOtro.CheckedChanged += new System.EventHandler(this.rbOtro_CheckedChanged);
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.ClientSize = new System.Drawing.Size(967, 532);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmpleadosDGV);
@@ -335,6 +439,8 @@ namespace ControlRH
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,8 +470,17 @@ namespace ControlRH
         private System.Windows.Forms.TextBox NIMMS;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Label FechaTermino;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox Telefono;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label Antiguedad;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RichTextBox Motivo;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rbOtro;
+        private System.Windows.Forms.RadioButton rbTermino;
     }
 }
