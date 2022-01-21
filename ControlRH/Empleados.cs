@@ -1,12 +1,6 @@
-﻿using MySqlConnector;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControlRH
@@ -21,17 +15,18 @@ namespace ControlRH
             actualizarTabla(EmpleadosDGV);
         }
 
-        private void Actualizar_Click(object sender, EventArgs e)
+        private void Actualizar_Click(object sender, EventArgs e) //Actualizar base de datos
         {
             if (solicitarPin())
             {
                 conexion = new Conexion();
-                string nombre, rfc, curp, sueldo, puesto, where;
+                string nombre, rfc, curp, sueldo, puesto,nss, where;
                 nombre = Nombre.Text;
                 rfc = RFC.Text;
                 curp = CURP.Text;
                 sueldo = Sueldo.Text;
                 puesto = Puesto.Text;
+                nss = NIMMS.Text;
 
 
 
@@ -40,6 +35,7 @@ namespace ControlRH
                     "curp='" + curp + "'," +
                     "sueldo='" + sueldo + "'," +
                     "puesto='" + puesto + "'," +
+                    "nss='" + nss + "'," +
                     "fecha_nacimiento='" + validarFecha(TimePicker.Value.ToString()) + "'";
 
                 try
@@ -72,7 +68,7 @@ namespace ControlRH
             
         }
 
-        private bool solicitarPin()
+        private bool solicitarPin() //Llamada a ventana de pin
         {
             String pinSeg;
             secPin pin = new secPin();
@@ -94,7 +90,7 @@ namespace ControlRH
 
         }
 
-        private string validarFecha(string fecha)
+        private string validarFecha(string fecha) //Poner formato de fecha
         {
             string ret = "";
 
@@ -107,7 +103,7 @@ namespace ControlRH
             return ret;
         }
 
-        private void actualizarTabla(DataGridView data)
+        private void actualizarTabla(DataGridView data) //Actualizacion de campos
         {
             conexion = new Conexion();
             sqlStatement = "select nombre,puesto from empleados";
@@ -130,7 +126,7 @@ namespace ControlRH
             accionesTabla();
         }
 
-        private void actualizarTabla(DataGridView data, string filter)
+        private void actualizarTabla(DataGridView data, string filter) //Filtro
         {
             sqlStatement = "select * from reclutamiento where puesto='" + filter + "'";
 
@@ -154,7 +150,8 @@ namespace ControlRH
         private void accionesTabla() { 
         }
 
-        private void EmpleadosDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void EmpleadosDGV_CellClick(object sender, DataGridViewCellEventArgs e) //Selección de filas
         {
             conexion = new Conexion();
             string selected = EmpleadosDGV.CurrentRow.Cells[0].Value.ToString();
@@ -170,6 +167,9 @@ namespace ControlRH
             Sueldo.Text = table.Rows[0]["Sueldo"].ToString();
             DiasContrato.Text = table.Rows[0]["Dias_contrato"].ToString();
             FechaIngreso.Text = table.Rows[0]["Fecha_ingreso"].ToString();
+            TimePicker.Text=table.Rows[0]["Fecha_nacimiento"].ToString();
+            NIMMS.Text = table.Rows[0]["NSS"].ToString();
+
         }
 
         private void btnTContrato_Click(object sender, EventArgs e)
@@ -181,11 +181,15 @@ namespace ControlRH
                 if (fecha.ShowDialog() == DialogResult.OK)
                 {
                     DateTime dt = fecha.GetDate(), di = DateTime.Parse(FechaIngreso.Text), dr;
+
+                    String diater = validarFecha(""+dt);
+
                     double asdf=dt.Subtract(di).TotalDays;
+                Console.WriteLine(diater);
                 
                     
-                int ffff = ((int)asdf);
-                MessageBox.Show(ffff.ToString());
+                    int ffff = ((int)asdf);
+                    MessageBox.Show(ffff.ToString());
                 }
             
         }

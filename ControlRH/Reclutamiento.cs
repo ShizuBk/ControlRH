@@ -1,12 +1,6 @@
-﻿using MySqlConnector;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControlRH
@@ -30,9 +24,12 @@ namespace ControlRH
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             conexion = new Conexion();
-            string nombre, puesto, identificador, tipo;
-            nombre = ReclutamientoDGV.CurrentRow.Cells[1].Value.ToString();
-            puesto = ReclutamientoDGV.CurrentRow.Cells[3].Value.ToString();
+            string nombre, puesto, identificador, tipo,tel;
+            nombre = ReclutamientoDGV.CurrentRow.Cells[0].Value.ToString();
+            tel = ReclutamientoDGV.CurrentRow.Cells[1].Value.ToString();
+            puesto = ReclutamientoDGV.CurrentRow.Cells[2].Value.ToString();
+            
+
             OIdentificador nid; 
             if (rbEmp.Checked)
             {
@@ -45,7 +42,10 @@ namespace ControlRH
                         try
                         {
                             identificador = nid.getID();
-                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador + "')";
+                            Console.WriteLine(identificador);
+                            
+                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador + "','" + tel + "')";
+                            Console.WriteLine(sqlStatement);
                             conexion.executeQuery(sqlStatement);
                             MessageBox.Show("Se ha completado la operación.","Operación exitosa");
                         }
@@ -71,7 +71,7 @@ namespace ControlRH
                         try
                         {                         
                             identificador = nid.getID();
-                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador + "')";
+                            sqlStatement = "call AceptarV('" + nombre + "','" + puesto + "','" + tipo + "','" + identificador +","+tel+ "')";
                             conexion.executeQuery(sqlStatement);
                             MessageBox.Show("Se ha completado la operación.", "Operación exitosa");
                         }
@@ -244,8 +244,8 @@ namespace ControlRH
 
         public void accionesTabla()
         {
-            ReclutamientoDGV.Columns[0].Width = 20;
-            ReclutamientoDGV.Columns[1].Width = 120;
+            ReclutamientoDGV.Columns[0].Width = 150;
+            ReclutamientoDGV.Columns[1].Width = 70;
         }
 
 
@@ -269,7 +269,7 @@ namespace ControlRH
 
         private void ReclutamientoDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            labelNomP.Text = ReclutamientoDGV.CurrentRow.Cells[1].Value.ToString();
+            labelNomP.Text = ReclutamientoDGV.CurrentRow.Cells[0].Value.ToString();
         }
     }
 
