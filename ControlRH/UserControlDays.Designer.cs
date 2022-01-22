@@ -36,6 +36,7 @@ namespace ControlRH
             // Cumpleaños
             // 
             this.Cumpleaños.AutoSize = true;
+            this.Cumpleaños.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cumpleaños.Location = new System.Drawing.Point(3, 3);
             this.Cumpleaños.Name = "Cumpleaños";
             this.Cumpleaños.Size = new System.Drawing.Size(35, 13);
@@ -45,6 +46,7 @@ namespace ControlRH
             // Names
             // 
             this.Names.AutoSize = true;
+            this.Names.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Names.Location = new System.Drawing.Point(3, 25);
             this.Names.Name = "Names";
             this.Names.Size = new System.Drawing.Size(35, 13);

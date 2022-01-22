@@ -124,7 +124,7 @@ namespace ControlRH
         private void actualizarTabla(DataGridView data) //Actualizacion de campos
         {
             conexion = new Conexion();
-            sqlStatement = "select nombre,puesto from empleados";
+            sqlStatement = "select Nombre,Puesto from empleados";
 
             try
             {
@@ -165,7 +165,9 @@ namespace ControlRH
 
             accionesTabla();
         }
-        private void accionesTabla() { 
+        private void accionesTabla() {
+            EmpleadosDGV.Columns[0].Width = 200;
+            EmpleadosDGV.Columns[1].Width = 120;
         }
 
 

@@ -246,8 +246,9 @@ namespace ControlRH
 
         public void accionesTabla()
         {
-            ReclutamientoDGV.Columns[0].Width = 150;
-            ReclutamientoDGV.Columns[1].Width = 70;
+            ReclutamientoDGV.Columns[0].Width = 179;
+            ReclutamientoDGV.Columns[1].Width = 179;
+            ReclutamientoDGV.Columns[2].Width = 179;
         }
 
 
@@ -272,6 +273,11 @@ namespace ControlRH
         private void ReclutamientoDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             labelNomP.Text = ReclutamientoDGV.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 
