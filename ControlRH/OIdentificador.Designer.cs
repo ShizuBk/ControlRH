@@ -59,6 +59,7 @@ namespace ControlRH
             this.Controls.Add(this.txtbID);
             this.Controls.Add(this.Textbx);
             this.Name = "OIdentificador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.OIdentificador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

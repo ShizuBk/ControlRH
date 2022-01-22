@@ -63,6 +63,7 @@ namespace ControlRH
             this.Controls.Add(this.pin);
             this.Controls.Add(this.label1);
             this.Name = "secPin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

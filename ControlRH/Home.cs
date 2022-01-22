@@ -64,5 +64,17 @@ namespace ControlRH
             this.panelCont.Tag = practicantes;
             practicantes.Show();
         }
+
+        private void btnCalendario_Click(object sender, EventArgs e)
+        {
+            this.panelCont.Controls.Clear();
+            Calendario calendario = new Calendario();
+            calendario.TopLevel = false;
+            calendario.FormBorderStyle = FormBorderStyle.None;
+            calendario.Dock = DockStyle.Fill;
+            this.panelCont.Controls.Add(calendario);
+            this.panelCont.Tag = calendario;
+            calendario.Show();
+        }
     }
 }

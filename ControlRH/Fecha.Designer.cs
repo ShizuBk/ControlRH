@@ -35,14 +35,15 @@ namespace ControlRH
             // 
             // DT
             // 
-            this.DT.Location = new System.Drawing.Point(12, 12);
+            this.DT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT.Location = new System.Drawing.Point(36, 11);
             this.DT.Name = "DT";
-            this.DT.Size = new System.Drawing.Size(200, 20);
+            this.DT.Size = new System.Drawing.Size(115, 20);
             this.DT.TabIndex = 0;
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(218, 13);
+            this.Aceptar.Location = new System.Drawing.Point(181, 12);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(75, 23);
             this.Aceptar.TabIndex = 1;
@@ -58,7 +59,7 @@ namespace ControlRH
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.DT);
             this.Name = "Fecha";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 
         }

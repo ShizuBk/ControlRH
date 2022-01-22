@@ -34,13 +34,14 @@ namespace ControlRH
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnBajas = new System.Windows.Forms.Button();
             this.btnPracticantes = new System.Windows.Forms.Button();
+            this.btnCalendario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelCont
             // 
             this.panelCont.Location = new System.Drawing.Point(172, 12);
             this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(984, 603);
+            this.panelCont.Size = new System.Drawing.Size(984, 701);
             this.panelCont.TabIndex = 0;
             // 
             // btnReclutamiento
@@ -83,17 +84,29 @@ namespace ControlRH
             this.btnPracticantes.UseVisualStyleBackColor = true;
             this.btnPracticantes.Click += new System.EventHandler(this.btnPracticantes_Click);
             // 
+            // btnCalendario
+            // 
+            this.btnCalendario.Location = new System.Drawing.Point(51, 253);
+            this.btnCalendario.Name = "btnCalendario";
+            this.btnCalendario.Size = new System.Drawing.Size(75, 23);
+            this.btnCalendario.TabIndex = 2;
+            this.btnCalendario.Text = "Calendario";
+            this.btnCalendario.UseVisualStyleBackColor = true;
+            this.btnCalendario.Click += new System.EventHandler(this.btnCalendario_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 627);
+            this.ClientSize = new System.Drawing.Size(1172, 725);
+            this.Controls.Add(this.btnCalendario);
             this.Controls.Add(this.btnPracticantes);
             this.Controls.Add(this.btnBajas);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnReclutamiento);
             this.Controls.Add(this.panelCont);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlRH";
             this.ResumeLayout(false);
 
@@ -106,5 +119,6 @@ namespace ControlRH
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnBajas;
         private System.Windows.Forms.Button btnPracticantes;
+        private System.Windows.Forms.Button btnCalendario;
     }
 }

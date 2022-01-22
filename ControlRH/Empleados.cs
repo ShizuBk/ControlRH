@@ -19,6 +19,7 @@ namespace ControlRH
             btnTContrato.Enabled = false;
             Motivo.Enabled = false;
             Antiguedad.Text = "";
+            
         }
 
         private void Actualizar_Click(object sender, EventArgs e) //Actualizar base de datos
@@ -243,8 +244,8 @@ namespace ControlRH
                     Puesto.Text = table.Rows[0]["Puesto"].ToString();
                     Sueldo.Text = table.Rows[0]["Sueldo"].ToString();
                     DiasContrato.Text = table.Rows[0]["Dias_contrato"].ToString();
-                    FechaIngreso.Text = table.Rows[0]["Fecha_ingreso"].ToString();
-                    FechaTermino.Text = table.Rows[0]["Fecha_termino"].ToString();
+                    FechaIngreso.Text = validarFecha(table.Rows[0]["Fecha_ingreso"].ToString(), '/');
+                    FechaTermino.Text = validarFecha(table.Rows[0]["Fecha_termino"].ToString(), '/');
                     TimePicker.Text = table.Rows[0]["Fecha_nacimiento"].ToString();
                     Telefono.Text = table.Rows[0]["Telefono"].ToString();
                     Antiguedad.Text = table.Rows[0]["Antiguedad"].ToString();
