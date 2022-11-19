@@ -21,12 +21,13 @@ namespace ControlRH
         public Practicantes(){
             InitializeComponent();
             actualizarTabla(PracticantesDGV);
+            accionesTabla();
         }
         private void actualizarTabla(DataGridView data)
         {
 
             conexion = new Conexion();
-            sqlStatement = "select nombre,puesto from practicantes";
+            sqlStatement = "select Nombre,Puesto from practicantes";
 
             try
             {
@@ -36,6 +37,7 @@ namespace ControlRH
                 BindingSource form = new BindingSource();
                 form.DataSource = table;
                 data.DataSource = form;
+                accionesTabla();
             }
             catch (Exception e)
             {
@@ -58,17 +60,20 @@ namespace ControlRH
                 BindingSource form = new BindingSource();
                 form.DataSource = table;
                 data.DataSource = form;
+               
             }
             catch (Exception e)
             {
                 e.GetType();
                 MessageBox.Show("Ha ocurrido un error inesperado", "Error");
             }
-
             accionesTabla();
+
         }
         private void accionesTabla()
         {
+            PracticantesDGV.Columns[0].Width = 200;
+            PracticantesDGV.Columns[1].Width = 120;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -238,6 +243,16 @@ namespace ControlRH
             {
                 MessageBox.Show("No hay elemento seleccionado", "Error");
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CURP_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

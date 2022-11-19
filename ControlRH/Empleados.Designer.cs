@@ -112,7 +112,11 @@ namespace ControlRH
             // 
             // Actualizar
             // 
-            this.Actualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.Actualizar.FlatAppearance.BorderSize = 0;
+            this.Actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Actualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Actualizar.Location = new System.Drawing.Point(379, 170);
             this.Actualizar.Name = "Actualizar";
             this.Actualizar.Size = new System.Drawing.Size(120, 41);
@@ -257,12 +261,17 @@ namespace ControlRH
             // 
             // btnTContrato
             // 
-            this.btnTContrato.Location = new System.Drawing.Point(69, 144);
+            this.btnTContrato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnTContrato.FlatAppearance.BorderSize = 0;
+            this.btnTContrato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnTContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTContrato.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTContrato.Location = new System.Drawing.Point(26, 144);
             this.btnTContrato.Name = "btnTContrato";
-            this.btnTContrato.Size = new System.Drawing.Size(282, 29);
+            this.btnTContrato.Size = new System.Drawing.Size(282, 42);
             this.btnTContrato.TabIndex = 18;
             this.btnTContrato.Text = "Fijar fecha de término de contrato";
-            this.btnTContrato.UseVisualStyleBackColor = true;
+            this.btnTContrato.UseVisualStyleBackColor = false;
             this.btnTContrato.Click += new System.EventHandler(this.btnTContrato_Click);
             // 
             // groupBox1
@@ -289,7 +298,7 @@ namespace ControlRH
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(546, 221);
+            this.groupBox1.Size = new System.Drawing.Size(553, 221);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del empleado";
@@ -344,7 +353,7 @@ namespace ControlRH
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(359, 178);
+            this.groupBox2.Size = new System.Drawing.Size(359, 198);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del contrato";
@@ -389,13 +398,18 @@ namespace ControlRH
             // 
             // btnBaja
             // 
+            this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnBaja.FlatAppearance.BorderSize = 0;
+            this.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBaja.Location = new System.Drawing.Point(10, 110);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(144, 28);
+            this.btnBaja.Size = new System.Drawing.Size(144, 38);
             this.btnBaja.TabIndex = 21;
             this.btnBaja.Text = "Dar de baja";
-            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.UseVisualStyleBackColor = false;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // Motivo

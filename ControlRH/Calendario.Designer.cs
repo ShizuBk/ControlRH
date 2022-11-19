@@ -51,22 +51,34 @@ namespace ControlRH
             // 
             // bntPrev
             // 
-            this.bntPrev.Location = new System.Drawing.Point(777, 679);
+            this.bntPrev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.bntPrev.FlatAppearance.BorderSize = 0;
+            this.bntPrev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.bntPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntPrev.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntPrev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bntPrev.Location = new System.Drawing.Point(729, 679);
             this.bntPrev.Name = "bntPrev";
-            this.bntPrev.Size = new System.Drawing.Size(75, 23);
+            this.bntPrev.Size = new System.Drawing.Size(110, 33);
             this.bntPrev.TabIndex = 1;
             this.bntPrev.Text = "Anterior";
-            this.bntPrev.UseVisualStyleBackColor = true;
+            this.bntPrev.UseVisualStyleBackColor = false;
             this.bntPrev.Click += new System.EventHandler(this.bntPrev_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(883, 679);
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNext.Location = new System.Drawing.Point(845, 679);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(113, 33);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Siguiente";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1

@@ -61,11 +61,11 @@ namespace ControlRH
 
             if (rbEmp.Checked == true)
             {
-                sqlStatement = "select nombre,puesto,telefono from bajasemp";
+                sqlStatement = "select Nombre,Puesto,Telefono from bajasemp";
             }
             else
             {
-                sqlStatement = "select nombre,puesto, telefono from bajasprac";
+                sqlStatement = "select Nombre,Puesto,Telefono from bajasprac";
             }
 
             try
@@ -109,6 +109,9 @@ namespace ControlRH
         }
         private void accionesTabla()
         {
+            BajasDGV.Columns[0].Width = 200;
+            BajasDGV.Columns[1].Width = 120;
+            BajasDGV.Columns[2].Width = 120;
         }
 
         private void rbEmp_CheckedChanged(object sender, EventArgs e)

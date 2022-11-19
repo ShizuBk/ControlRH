@@ -198,7 +198,9 @@ namespace ControlRH
             month = now.Month;
             year = now.Year;
 
-            string monthname= System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+
+
+            string monthname = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             MonthYear.Text = monthname.ToUpper()+" "+year;
             //Primeros días del mes
             DateTime inicioMes = new DateTime(year, month, 1);
@@ -206,6 +208,13 @@ namespace ControlRH
             int dias = DateTime.DaysInMonth(year,month);
             //Convesión de los días a entero
             int diasSem = Convert.ToInt32(inicioMes.DayOfWeek.ToString("d"))+1;
+
+            for (int i = 1; i < diasSem; i++)
+            {
+                UserControlBlank ucblank = new UserControlBlank();
+                dayContainer.Controls.Add(ucblank);
+            }
+            //control de los días
 
 
             string dateString = "";
@@ -225,17 +234,17 @@ namespace ControlRH
                         if (mt==month)
                         {
 
-                            Console.WriteLine("Yep "+day+","+i);
+
                             if (day==i)
                             {
-                                Console.WriteLine("Yep");
+
                                 names = names + table.Rows[j]["nombre"].ToString() + "\n";
-                                Console.WriteLine(names);
+
                             }
                         }
                     }
 
-                    Console.WriteLine(names);
+
 
                 }
                 catch
